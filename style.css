@@ -1,0 +1,763 @@
+.orbitron-<uniquifier> {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.ubuntu-sans-mono-<uniquifier> {
+  font-family: "Ubuntu Sans Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+html{
+    cursor: url('src/sraka.png'), auto;
+}
+header {
+transform: translateY(-100%);
+animation: slideDown 0.8s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform:translateY(-100%)
+    }
+    to{
+        transform:translateY(0)
+    }
+}
+
+h1{
+    font-family: orbitron;
+}
+
+span{
+      font-family: orbitron;
+}
+
+p{
+    font-family: ubuntu sans mono;
+      display: flex;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  color:#fff;
+  transform: translateY(-40px);
+}
+
+img{
+    height: 50px;
+    width: 190px;
+}
+
+body{
+    background: rgb(0, 0, 0);
+    
+}
+
+
+.navbar{
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.pillnav{
+    display:flex;
+    align-items: center;
+    gap:3px;
+    padding: 5px;
+    border: 1px solid rgba(255,255,255, 0.3);
+    border-radius:8px;
+    background: rgba(238, 247, 240, 0.68);
+    color: #111916;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 18px 46px rgba(0,0,0, 0.18);
+    backdrop-filter: blur(18px) saturate(1.3);
+    position: relative;
+}
+
+.pillnav a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+     border-radius: 6px;
+    font-size: 11px;
+    font-weight:780 ;
+    text-decoration: none;
+    color:#222;
+    font-weight:bold;
+    font-family: ubuntu sans mono;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 2;
+    padding: 10px 20px;
+}
+
+.logonav{
+    display:flex;
+    align-items: center;
+    gap:8px;
+    color:white;
+    font-size:20px;
+}
+
+.navpill {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+.movingbg{
+    position:absolute;
+    top: 0;
+    left : 0;
+    background: #111;
+    border-radius: 8px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.star-particle{
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    filter:blur(0.3px)
+}
+
+.pillnav a:hover{
+    color: #fff;
+}
+
+.hero {
+    position: relative;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-title {
+  display: flex;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  color:#fff;
+transform: translateY(-40px);
+  font-size: clamp(48px, 8vw, 15px);
+}
+
+.char {
+  display: inline-block;
+  transform-origin: left center;
+  will-change: transform, opacity, filter;
+}
+
+.type-line {
+  position: relative;
+  display: inline-block;
+  transform: translateY(-90px);
+}
+
+.wand {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-80%);
+  height: 120px;
+  width: 120px;
+  width: auto;
+  pointer-events: none;
+  transform-origin: center;
+}
+#hero canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0;
+}
+
+.mars-container {
+  position: absolute;
+  bottom: -550px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 1000px;
+  z-index: 1;
+}
+
+.mars-planet {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: url('Solarsystemscope_texture_2k_mars.jpg');
+  background-size: cover;
+  background-repeat: repeat-x;
+  position: relative;
+  box-shadow: 
+  0 -20px 80px rgba(255, 69, 0, 0.4), 
+  inset 0 -200px 150px rgba(0, 0, 0, 0.9),
+  inset 0 20px 40px rgba(255, 255, 255, 0.2);
+  filter: brightness(0.8) contrast(1.2);
+  z-index:2;
+}
+
+
+.mars-planet::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 5%, rgba(255, 100, 50, 0.1) 0%, transparent 50%);
+}
+
+.city{
+      position: relative;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-repeat: no-repeat;
+      height: 100vh;
+    position: relative;
+    z-index: 10;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.scroll-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.scroll-content {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 200vw;
+    height: 100vh;
+    will-change: transform;
+}
+
+.hero, .hero-extra {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    position: relative;
+}
+
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.horizontal-scroll {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.horizontal-track {
+  display: flex;
+  width: max-content;
+  height: 100vh;
+}
+
+.panel {
+  flex: 0 0 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.hero {
+  background: #000000;
+}
+
+
+.normal-content {
+  min-height: 150vh;
+  background: black;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  position: relative
+}
+
+.left-side {
+  width: 50%;
+  background: black;
+  position: relative;
+}
+
+.right-side {
+  width: 50%;
+  background: black;
+}
+
+.video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#main-countdown-box {
+    font-family: orbitron;
+    text-align: left;
+background: linear-gradient(18deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 41%, rgba(255, 106, 0, 1) 57%, rgba(255, 8, 0, 1) 100%);
+      -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+    min-height: 7.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:200px;
+
+}
+
+.citytitle{
+  color:#fff;
+transform: translateY(-40px);
+  display: inline-flex;
+  font-size: clamp(48px, 8vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding-left: 100px;
+position: relative;
+z-index: 2;
+}
+
+.tx{
+    font-size: 1.2rem;
+    color: #d1d5db;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    margin-inline: auto;
+    max-width: 24rem;
+    opacity: 50%;
+    padding-right: 370px;
+    z-index: 2;
+}
+
+.counter{
+    border-right: 1px solid rgba(121, 48, 0, 0.479);
+    border-radius: 0.75rem;
+    text-align: center;
+    height: 168px;
+    width:209px ;
+  margin-left:20px;
+      padding: 33px;
+      
+}
+
+.number{
+      font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.numbar{
+    display: inline-flex;
+  font-size: clamp(48px, 8vw, 15px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+  color:orangered;
+}
+
+.ccontainer{
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.103);
+    border-radius: 0.75rem;
+    text-align: center;
+    height: 235px;
+    width:889px ;
+    margin-top: 80px;
+  margin-left:20px;
+  display:flex ;
+  
+}
+
+.how{
+      position: relative;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  align-self: center;
+    display: grid;
+  grid-template-rows: repeat(2, 200px);
+  gap: 20px; 
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    padding: 40px;
+    background-color: #000;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  object-fit: cover;
+  position: absolute;
+}
+
+.raketatitle{
+  color:#fff;
+transform: translateY(-40px);
+  display: inline-flex;
+  font-size: clamp(48px, 8vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  padding-left: 100px;
+z-index: 2;
+}
+
+.raketatx{
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: justify;
+    max-width: 24rem;
+    opacity: 50%;
+    z-index: 2;
+    display: inline-flex;
+    margin-left:90px;
+}
+
+.content{
+position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.table{
+
+}
+
+
+  
+.specs{
+  width:500px;
+  color:#fff;
+  font-family:Arial,sans-serif;
+  margin-left:90px;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.left img{
+  width:28px;
+}
+
+.value{
+  color:rgba(255,255,255,.7);
+  font-family:'Orbitron',sans-serif;
+}
+
+.icon{
+  height: 32px;
+  width: 32px;
+  filter: invert(1);
+
+}
+
+.button{
+  display:flex;
+  align-items:center;
+  gap:50px;
+  padding:18px 28px;
+  background:#fff;
+  color:#000;
+  border:none;
+  border-radius:8px;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:.5px;
+  cursor:pointer;
+  transition:.3s;
+  text-decoration: none;
+}
+
+.button:hover{
+  transform:translateY(-2px);
+  background:#cacaca;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 1080px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: url('src/marsqq.png') center/cover no-repeat;
+  font-family: sans-serif;
+      margin-top: 90px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.04), transparent 35%),
+    linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.55));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.timeline_content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 70px 100px 0 100px;
+  box-sizing: border-box;
+}
+
+.timelinetitle{
+  color:#fff;
+  font-size:80px;
+  line-height:1.05;
+  font-weight:700;
+  margin:10;
+  max-width:900px;
+}
+
+.timelinetext {
+  margin-top: 28px;
+  margin-left: 6px;
+  font-size: 18px;
+  color: rgba(255,255,255,.55);
+  max-width: 500px;
+}
+
+.days {
+  position: absolute;
+  left: 130px;
+  bottom: 170px;
+  display: flex;
+  gap: 26px;
+}
+
+.footer{
+    display: block;
+    unicode-bidi: isolate;
+    height: 100px;
+    border-top: 1px ;
+     border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.footerr{
+display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+     border-bottom:22px solid rgba(255,255,255,.08);
+}
+
+.iconf{
+    height: 32px;
+  width: 32px;
+  background-color: #0f0f0f;
+  border-radius: 7px;
+  margin:5px;
+}
+
+.iconc{
+  text-decoration: none;
+}
+
+.iconu{
+  height: 32px;
+  width: 43px;
+  margin:5px;
+}
+
+.txf{
+  display: block;
+  font-size: 2rem;
+}
+
+.cartoch {
+  position: relative;
+  width: 350px;
+  height: 160px;
+  border-radius: 42px;
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, rgba(15, 25, 45, 0.18), rgba(0, 0, 0, 0.35)),
+    url('src/earth.jpg') center top/120% no-repeat;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.cartoch2 {
+  position: relative;
+  width: 350px;
+  height: 160px;
+  border-radius: 42px;
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, rgba(15, 25, 45, 0.18), rgba(0, 0, 0, 0.35)),
+    url('src/marccity.jpg') center top/120% no-repeat;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.cartoch3 {
+  position: relative;
+  width: 350px;
+  height: 160px;
+  border-radius: 42px;
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, rgba(15, 25, 45, 0.18), rgba(0, 0, 0, 0.35)),
+    url('src/KAKAS.jpg') center top/120% no-repeat;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.cartoch:hover {
+  transform: translateY(-px);
+  box-shadow: 0 46px 70px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.cartoch2:hover {
+  transform: translateY(-px);
+  box-shadow: 0 46px 70px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.cartoch3:hover {
+  transform: translateY(-px);
+  box-shadow: 0 46px 70px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+
+.avatarka {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  background: rgba(40, 40, 40, 0.58);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.titleloh {
+  position: absolute;
+  left: 110px;
+  top: 36px;
+  z-index: 2;
+  color: #fff;
+}
+
+.titlelog {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.iconcard {
+  width: 42px;
+  height: 42px;
+  filter: invert(1);
+}
+
+.texl {
+  margin-top: 90px;
+  font-size: 14px;
+  opacity: .78;
+}
+
+.tickets {
+  min-height: 100vh;
+  background: #000;
+  display: grid;
+  overflow: hidden;
+}
+
+.tickets-particles,
+.tickets-content {
+  grid-area: 1 / 1;
+}
+
+.tickets-particles {
+  width: 100%;
+  min-height: 100vh;
+  z-index: 0;
+}
+
+.tickets-particles canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.tickets-content {
+  z-index: 1;
+  padding-top: 100px;
+  pointer-events: none;
+}
+
+.tocketcop{
+      display: grid;
+    gap: 18px;
+    justify-items: center;
+    text-align: center;
+}
